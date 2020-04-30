@@ -18,7 +18,7 @@ public interface JuegoManager {
 
     //Jugador
 
-
+    public void restaVida(String idjugador);
 
     //Mapa
 
@@ -30,5 +30,7 @@ public interface JuegoManager {
     public Partida getPartida(String idpartida);
     public ArrayList<Partida> getPartidasDeUnUsuario(String idusuario);
     public void savePartida(Partida partida);
-    public void endPartida(Partida);
+    public void endPartida(Partida partida);
+
+
 }
