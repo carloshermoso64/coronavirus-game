@@ -15,10 +15,14 @@ public interface JuegoManager {
 
     //Jugador
 
+
+
     //Mapa
 
     //Objetos
 
     //Partida
+
+    public void startPartida(String idusuarioint puntuacion);
 
 }

@@ -18,10 +18,11 @@ public class Partida {
         this.id = RandomUtils.getId();
     }
 
-    public Partida(String id, String idusuario) {
+    public Partida(String idusuario, int puntuacion, Nivel nivel) {
         this();
-        this.id = id;
         this.idusuario = idusuario;
+        this.puntuacion = puntuacion;
+        this.nivel = nivel;
         this.equipamiento = new ArrayList<Objeto>();
 
     }
