@@ -1,6 +1,9 @@
 package edu.upc.dsa.util;
 
+import edu.upc.dsa.models.Partida;
 import edu.upc.dsa.models.Usuario;
+
+import java.util.ArrayList;
 
 public interface JuegoManager {
 
@@ -23,6 +26,9 @@ public interface JuegoManager {
 
     //Partida
 
-    public void startPartida(String idusuarioint puntuacion);
-
+    public void startPartida(String idusuario, int puntuacion);
+    public Partida getPartida(String idpartida);
+    public ArrayList<Partida> getPartidasDeUnUsuario(String idusuario);
+    public void savePartida(Partida partida);
+    public void endPartida(Partida);
 }
