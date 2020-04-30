@@ -3,6 +3,7 @@ package edu.upc.dsa.models;
 import edu.upc.dsa.util.RandomUtils;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 
 public class Partida {
     String id;
@@ -11,6 +12,7 @@ public class Partida {
     SimpleDateFormat fechainicio;
     SimpleDateFormat fechafinal;
     Nivel nivel;
+    ArrayList<Objeto> equipamiento;
 
     public Partida() {
         this.id = RandomUtils.getId();
@@ -20,7 +22,16 @@ public class Partida {
         this();
         this.id = id;
         this.idusuario = idusuario;
+        this.equipamiento = new ArrayList<Objeto>();
 
+    }
+
+    public ArrayList<Objeto> getEquipamiento() {
+        return equipamiento;
+    }
+
+    public void setEquipamiento(ArrayList<Objeto> equipamiento) {
+        this.equipamiento = equipamiento;
     }
 
     public String getId() {
