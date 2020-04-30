@@ -1,15 +1,18 @@
 package edu.upc.dsa.models;
 
+import edu.upc.dsa.util.RandomUtils;
+
 public class Objeto {
     String id;
-    String descrp;
+    String nombre;
 
-    public Objeto(String idd, String d){
-        this.id = idd;
-        this.descrp = d;
+    public Objeto() {
+        this.id = RandomUtils.getId();
     }
 
-    public Objeto(){
+    public Objeto(String nombre) {
+        this();
+        this.nombre = nombre;
     }
 
     public String getId() {
@@ -20,12 +23,11 @@ public class Objeto {
         this.id = id;
     }
 
-    public String getDescrp() {
-        return descrp;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setDescrp(String descrp) {
-        this.descrp = descrp;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 }
-
