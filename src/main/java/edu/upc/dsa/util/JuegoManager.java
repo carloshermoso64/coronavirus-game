@@ -1,5 +1,6 @@
 package edu.upc.dsa.util;
 
+import edu.upc.dsa.models.Objeto;
 import edu.upc.dsa.models.Partida;
 import edu.upc.dsa.models.Usuario;
 
@@ -23,6 +24,9 @@ public interface JuegoManager {
     //Mapa
 
     //Objetos
+
+    public ArrayList<Objeto> getObjetos(String idpartida);
+
 
     //Partida
 
