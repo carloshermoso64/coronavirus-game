@@ -1,5 +1,8 @@
+package edu.upc.dsa.services;
+
 import edu.upc.dsa.models.Objeto;
 import edu.upc.dsa.models.Usuario;
+import edu.upc.dsa.util.GameManager;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
@@ -16,7 +19,7 @@ import javax.ws.rs.core.Response;
 @Path("/objetos")
 public class ObjetoService {
 
-    private UserDaoImp db; // Una vez se instale la librería de sql será el encargado
+    private GameManager db; // Una vez se instale la librería de sql será el encargado
 
     @GET // GET a specific user that has an id
     @ApiOperation(value = "get objetos by username", notes = "get objetos by username")

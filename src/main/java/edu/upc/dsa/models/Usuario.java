@@ -2,7 +2,7 @@ package edu.upc.dsa.models;
 
 import edu.upc.dsa.util.RandomUtils;
 
-public class Usuario {
+public class Usuario implements Comparable<Usuario>{
     String id;
     String nombre;
     String correo;
@@ -58,5 +58,11 @@ public class Usuario {
 
     public void setExperiencia(int experiencia) {
         this.experiencia = experiencia;
+    }
+
+    @Override
+    public int compareTo(Usuario o) {
+        String nombre;
+        return this.nombre.compareTo(o.getNombre());
     }
 }
