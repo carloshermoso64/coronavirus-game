@@ -4,6 +4,7 @@ public class UserDataManager {
     private String name;
     private String email;
     private String password;
+    private String oldname;
 
     public UserDataManager() {
     }
@@ -12,6 +13,21 @@ public class UserDataManager {
         this.name = name;
         this.email = email;
         this.password = password;
+    }
+
+    public UserDataManager(String name, String email, String password, String oldname) {
+        this.name = name;
+        this.email = email;
+        this.password = password;
+        this.oldname = oldname;
+    }
+
+    public String getOldname() {
+        return oldname;
+    }
+
+    public void setOldname(String oldname) {
+        this.oldname = oldname;
     }
 
     public String getName() {
