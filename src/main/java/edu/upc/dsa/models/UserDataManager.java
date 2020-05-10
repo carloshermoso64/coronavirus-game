@@ -4,7 +4,7 @@ public class UserDataManager {
     private String name;
     private String email;
     private String password;
-    private String oldname;
+    private String oldname = null;
 
     public UserDataManager() {
     }

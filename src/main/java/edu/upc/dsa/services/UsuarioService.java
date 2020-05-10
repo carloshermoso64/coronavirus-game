@@ -1,26 +1,21 @@
 package edu.upc.dsa.services;
 
-import dsa.grupo2.FactorySession;
-import dsa.grupo2.Session;
+
+
 import dsa.grupo2.UserDaoImp;
-import dsa.grupo2.models.User;
 import dsa.grupo2.util.QueryHelper;
 import edu.upc.dsa.models.UserDataManager;
-import edu.upc.dsa.models.Usuario;
-import edu.upc.dsa.util.GameManager;
+import edu.upc.dsa.models.User;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
+import org.eclipse.persistence.config.EntityManagerProperties;
 
 import javax.ws.rs.*;
-import javax.ws.rs.core.GenericEntity;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
-import java.sql.Connection;
 import java.sql.ResultSet;
-import java.sql.Statement;
-import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -29,9 +24,10 @@ import java.util.List;
 @Path("/usuario")
 public class UsuarioService {
 
-    private UserDaoImp db; // Una vez se instale la librería de sql será el encargado
+    private UserDaoImp db = new UserDaoImp(); // Una vez se instale la librería de sql será el encargado
 
-/*    @GET
+/*
+    @GET
     @ApiOperation(value = "Get All Users", notes = "Returns all the users")
     @ApiResponses(value = {
             @ApiResponse(code = 201, message = "Successful", response = Usuario.class, responseContainer="List"),
@@ -45,7 +41,7 @@ public class UsuarioService {
 
         try {
             Session session = FactorySession.openSession();
-            rs = session.query(QueryHelper.createQuerySELECT(Usuario, "user"));
+            rs = session.simpleQuery(QueryHelper.createSELECTALL("users"));
 
             while(rs.next()){
                 users.add(new Usuario(rs.getString("nombre"),rs.getString("correo"),rs.getString("contraseña")));
@@ -59,28 +55,31 @@ public class UsuarioService {
         GenericEntity<List<Usuario>> entity = new GenericEntity<>(users){};
         return Response.status(201).entity(entity).build();
     }
-*/
+
+ */
 
     @GET
     @ApiOperation(value = "Get Info of User by username", notes = "You will see the info of the user")
     @ApiResponses(value = {
-            @ApiResponse(code = 201, message = "Successful", response = User.class, responseContainer=""),
+            @ApiResponse(code = 201, message = "Successful", response = dsa.grupo2.models.User.class, responseContainer=""),
     })
-    @Path("/users/{nombre}")
+    @Path("/user/{name}")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response userInfo(@PathParam("username") String username) {
+    public Response userInfo(@PathParam("username") String name) {
 
 
-        if (username.equals("")) return Response.status(404).build();
-        try {
+        if (name.equals("")) return Response.status(404).build();
+        else {
+            try {
 
-            User u = db.getUserByName(username);
+                dsa.grupo2.models.User u = db.getUser("name",name);
+                return Response.status(201).entity(u).build();
 
-            return Response.status(201).entity(u).build();
-        }
-        catch (Exception ex) {
-            ex.printStackTrace();
-            return Response.status(404).build();
+            } catch (Exception ex) {
+
+                ex.printStackTrace();
+                return Response.status(404).build();
+            }
         }
 
 
@@ -90,7 +89,7 @@ public class UsuarioService {
     @POST
     @ApiOperation(value = "Create new user", notes = "Adds a new user")
     @ApiResponses(value = {
-            @ApiResponse(code = 201, message = "Successful", response= Usuario.class),
+            @ApiResponse(code = 201, message = "Successful", response= dsa.grupo2.models.User.class),
             @ApiResponse(code = 500, message = "Validation Error")
 
     })
@@ -113,14 +112,14 @@ public class UsuarioService {
     @PUT
     @ApiOperation(value = "update User data", notes = "updated")
     @ApiResponses(value = {
-            @ApiResponse(code = 201, message = "Successful",response = Usuario.class),
+            @ApiResponse(code = 201, message = "Successful",response = dsa.grupo2.models.User.class),
             @ApiResponse(code = 404, message = "User not found")
     })
     @Path("/usuario/{name}")
     public Response updateUser(UserDataManager updatingUser) {
 
 
-        User u = db.getUserByName(updatingUser.getOldname());
+        dsa.grupo2.models.User u = db.getUserByName(updatingUser.getOldname());
 
         if (u == null) return Response.status(404).build();
         else {

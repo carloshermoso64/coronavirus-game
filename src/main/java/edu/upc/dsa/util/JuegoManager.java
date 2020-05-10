@@ -2,7 +2,7 @@ package edu.upc.dsa.util;
 
 import edu.upc.dsa.models.Objeto;
 import edu.upc.dsa.models.Partida;
-import edu.upc.dsa.models.Usuario;
+import edu.upc.dsa.models.User;
 
 import java.util.ArrayList;
 
@@ -10,12 +10,12 @@ public interface JuegoManager {
 
     //Usuario
 
-    public Usuario getUsuario(String id);
-    public void addUsuario (Usuario u);
+    public User getUsuario(String id);
+    public void addUsuario (User u);
     public void addUsuario(String nombre, String correo, String contraseña);
-    public void updateUsuario(Usuario u);
+    public void updateUsuario(User u);
     public boolean logInUsuario(String nombre, String contraseña);
-    public void deleteUsuario(Usuario u);
+    public void deleteUsuario(User u);
 
     //Jugador
 

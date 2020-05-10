@@ -1,7 +1,7 @@
 package edu.upc.dsa.services;
 
 import edu.upc.dsa.models.Objeto;
-import edu.upc.dsa.models.Usuario;
+import edu.upc.dsa.models.User;
 import edu.upc.dsa.util.GameManager;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -30,7 +30,7 @@ public class ObjetoService {
     @Path("/User/{id}")
     @Produces(MediaType.APPLICATION_JSON)
     public Response getObjects(@PathParam("username") String username) {
-        Usuario u = this.db.getUser(username);
+        User u = this.db.getUser(username);
         if (u == null) {
             return Response.status(404).build();
         } else return Response.status(201).entity(u).build();
