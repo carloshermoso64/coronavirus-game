@@ -20,11 +20,11 @@ import java.util.LinkedList;
 import java.util.List;
 
 
-@Api(value = "/usuario", description = "Endpoint de usuarios")
-@Path("/usuario")
+@Api(value = "/user", description = "Endpoint de usuarios")
+@Path("/user")
 public class UsuarioService {
 
-    private UserDaoImp db = new UserDaoImp(); // Una vez se instale la librería de sql será el encargado
+    private UserDaoImp db; // Una vez se instale la librería de sql será el encargado
 
 /*
     @GET
@@ -63,20 +63,19 @@ public class UsuarioService {
     @ApiResponses(value = {
             @ApiResponse(code = 201, message = "Successful", response = dsa.grupo2.models.User.class, responseContainer=""),
     })
-    @Path("/user/{name}")
+    @Path("/{name}")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response userInfo(@PathParam("username") String name) {
-
+    public Response userInfo(@PathParam("name") String name) {
 
         if (name.equals("")) return Response.status(404).build();
         else {
             try {
-
-                dsa.grupo2.models.User u = db.getUser("name",name);
+                UserDaoImp db = new UserDaoImp();
+                dsa.grupo2.models.User u = db.getUserByName(name);
+                System.out.println(u.getEmail());
                 return Response.status(201).entity(u).build();
 
             } catch (Exception ex) {
-
                 ex.printStackTrace();
                 return Response.status(404).build();
             }
@@ -115,10 +114,11 @@ public class UsuarioService {
             @ApiResponse(code = 201, message = "Successful",response = dsa.grupo2.models.User.class),
             @ApiResponse(code = 404, message = "User not found")
     })
-    @Path("/usuario/{name}")
+    @Path("/{name}")
     public Response updateUser(UserDataManager updatingUser) {
 
 
+        UserDaoImp db = new UserDaoImp();
         dsa.grupo2.models.User u = db.getUserByName(updatingUser.getOldname());
 
         if (u == null) return Response.status(404).build();
