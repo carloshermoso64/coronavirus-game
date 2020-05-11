@@ -3,28 +3,22 @@ package edu.upc.dsa.services;
 
 
 import dsa.grupo2.UserDaoImp;
-import dsa.grupo2.util.QueryHelper;
 import edu.upc.dsa.models.UserDataManager;
-import edu.upc.dsa.models.User;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
-import org.eclipse.persistence.config.EntityManagerProperties;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
-import java.sql.ResultSet;
-import java.util.LinkedList;
-import java.util.List;
 
 
 @Api(value = "/user", description = "Endpoint de usuarios")
 @Path("/user")
 public class UsuarioService {
 
-    private UserDaoImp db; // Una vez se instale la librería de sql será el encargado
+    private UserDaoImp userDaoImp; // Una vez se instale la librería de sql será el encargado
 
 /*
     @GET
@@ -99,7 +93,7 @@ public class UsuarioService {
         if (u.getName()==null || u.getEmail()==null)  return Response.status(500).entity(u).build();
 
         try {
-           db.addUser(u.getName(),u.getEmail(),u.getPassword());
+           userDaoImp.addUser(u.getName(),u.getEmail(),u.getPassword());
         }
         catch (Exception ex) {
             ex.printStackTrace();

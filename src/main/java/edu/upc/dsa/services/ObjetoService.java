@@ -1,17 +1,17 @@
 package edu.upc.dsa.services;
 
+import dsa.grupo2.ItemDAOImp;
+import dsa.grupo2.models.Item;
 import edu.upc.dsa.models.Objeto;
 import edu.upc.dsa.models.User;
+import edu.upc.dsa.models.UserDataManager;
 import edu.upc.dsa.util.GameManager;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
 
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
-import javax.ws.rs.Produces;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
@@ -19,21 +19,60 @@ import javax.ws.rs.core.Response;
 @Path("/objetos")
 public class ObjetoService {
 
-    private GameManager db; // Una vez se instale la librería de sql será el encargado
 
-    @GET // GET a specific user that has an id
+    @GET // Get item by ID
     @ApiOperation(value = "get objetos by username", notes = "get objetos by username")
     @ApiResponses(value = {
             @ApiResponse(code = 201, message = "Successful", response = Objeto.class),
-            @ApiResponse(code = 404, message = "User not found")
+            @ApiResponse(code = 404, message = "item not found")
     })
-    @Path("/User/{id}")
+    @Path("/{id}")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response getObjects(@PathParam("username") String username) {
-        User u = this.db.getUser(username);
-        if (u == null) {
+    public Response getObjectsById(@PathParam("id") String id) {
+        ItemDAOImp itemDAOImp = new ItemDAOImp();
+        dsa.grupo2.models.Item i = itemDAOImp.getItemById(id);
+        if (i == null) {
             return Response.status(404).build();
-        } else return Response.status(201).entity(u).build();
+        } else return Response.status(201).entity(i).build();
+    }
+
+    @GET // Get item by name
+    @ApiOperation(value = "get objetos by username", notes = "get objetos by username")
+    @ApiResponses(value = {
+            @ApiResponse(code = 201, message = "Successful", response = Objeto.class),
+            @ApiResponse(code = 404, message = "item not found")
+    })
+    @Path("/objetos/{name}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response getObjectsByName(@PathParam("name") String name) {
+        ItemDAOImp itemDAOImp = new ItemDAOImp();
+        dsa.grupo2.models.Item i = itemDAOImp.getItemById(name);
+        if (i == null) {
+            return Response.status(404).build();
+        } else return Response.status(201).entity(i).build();
+    }
+    @POST
+    @ApiOperation(value = "Create new item", notes = "Adds a new item")
+    @ApiResponses(value = {
+            @ApiResponse(code = 201, message = "Successful", response= dsa.grupo2.models.Item.class),
+            @ApiResponse(code = 500, message = "Validation Error")
+
+    })
+
+    @Path("/additem")
+    @Consumes(MediaType.APPLICATION_JSON)
+    public Response newUser(Item item) {
+        if (item.getName()==null || item.getId()==null)  return Response.status(500).entity(item).build();
+
+        try {
+            ItemDAOImp itemDAOImp = new ItemDAOImp();
+            itemDAOImp.addItem(item);
+        }
+        catch (Exception ex) {
+            ex.printStackTrace();
+        }
+
+        return Response.status(201).entity(item).build();
     }
 }
 
