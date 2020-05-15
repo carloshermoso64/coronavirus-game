@@ -93,7 +93,8 @@ public class UsuarioService {
         if (u.getName()==null || u.getEmail()==null)  return Response.status(500).entity(u).build();
 
         try {
-           userDaoImp.addUser(u.getName(),u.getEmail(),u.getPassword());
+            UserDaoImp db = new UserDaoImp();
+            db.addUser(u.getName(),u.getEmail(),u.getPassword());
         }
         catch (Exception ex) {
             ex.printStackTrace();
@@ -129,6 +130,30 @@ public class UsuarioService {
     }
 
 
+    @POST
+    @ApiOperation(value = "Login", notes = "Check login")
+    @ApiResponses(value = {
+            @ApiResponse(code = 201, message = "Successful", response= String.class),
+            @ApiResponse(code = 500, message = "Validation Error")
 
+    })
+
+    @Path("/login")
+    @Consumes(MediaType.APPLICATION_JSON)
+    public Response checkLogin(UserDataManager u) {
+        String token = null;
+        if (u.getName()==null || u.getEmail()==null)  return Response.status(500).entity(u).build();
+
+        try {
+            UserDaoImp db = new UserDaoImp();
+            token = db.checkLogin(u.getName(),u.getPassword());
+
+        }
+        catch (Exception ex) {
+            ex.printStackTrace();
+        }
+
+        return Response.status(201).entity(token).build();
+    }
 
 }
