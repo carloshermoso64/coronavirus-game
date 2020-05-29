@@ -2,10 +2,6 @@ package edu.upc.dsa.services;
 
 import dsa.grupo2.ItemDAOImp;
 import dsa.grupo2.models.Item;
-import edu.upc.dsa.models.Objeto;
-import edu.upc.dsa.models.User;
-import edu.upc.dsa.models.UserDataManager;
-import edu.upc.dsa.util.GameManager;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
@@ -23,7 +19,7 @@ public class ObjetoService {
     @GET // Get item by ID
     @ApiOperation(value = "get objetos by username", notes = "get objetos by username")
     @ApiResponses(value = {
-            @ApiResponse(code = 201, message = "Successful", response = Objeto.class),
+            @ApiResponse(code = 201, message = "Successful", response = Item.class),
             @ApiResponse(code = 404, message = "item not found")
     })
     @Path("/{id}")
@@ -39,7 +35,7 @@ public class ObjetoService {
     @GET // Get item by name
     @ApiOperation(value = "get objetos by username", notes = "get objetos by username")
     @ApiResponses(value = {
-            @ApiResponse(code = 201, message = "Successful", response = Objeto.class),
+            @ApiResponse(code = 201, message = "Successful", response = Item.class),
             @ApiResponse(code = 404, message = "item not found")
     })
     @Path("/objetos/{name}")
