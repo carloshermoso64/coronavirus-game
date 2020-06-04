@@ -84,7 +84,7 @@
             <artifactId>DAOProyecto-1.0-SNAPSHOT</artifactId>
             <scope>system</scope>
             <version>1.0</version>
-            <systemPath>${basedir}\src\main\java\edu\upc\dsa\lib\DAOProyecto-1.0-SNAPSHOT.jar</systemPath>
+            <systemPath>${basedir}/src/main/java/edu/upc/dsa/lib/DAOProyecto-1.0-SNAPSHOT.jar</systemPath>
         </dependency>
     </dependencies>
 

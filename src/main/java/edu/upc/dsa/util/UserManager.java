@@ -1,16 +1,13 @@
 package edu.upc.dsa.util;
 
-import dsa.grupo2.models.User;
-import edu.upc.dsa.models.UserTO;
 
-import java.util.HashMap;
-import java.util.List;
+import edu.upc.dsa.models.User;
 
 public interface UserManager {
     public User getUserByName(String name);
     public User getUserByID(String id);
     public String addUser(User user);
     public User updateUser(String newName,String newPassword, String newEmail , String oldID);
-    //public void deleteUser(String id); TO DO
+    public boolean deleteUser(String id);
     public String checkLogin(User user);
 }

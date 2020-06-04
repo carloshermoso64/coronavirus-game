@@ -1,9 +1,8 @@
 package edu.upc.dsa.services;
 
-import dsa.grupo2.TokenDAOImp;
-import dsa.grupo2.models.Token;
-import dsa.grupo2.models.User;
 import edu.upc.dsa.models.Credentials;
+import edu.upc.dsa.models.RegisterCredentials;
+import edu.upc.dsa.models.User;
 import edu.upc.dsa.models.UserTO;
 import edu.upc.dsa.util.UserManagerImp;
 import io.swagger.annotations.Api;
@@ -58,13 +57,14 @@ public class UserService {
 
     @Path("/adduser")
     @Consumes(MediaType.APPLICATION_JSON)
-    public Response newUser(User u) {
+    public Response newUser(RegisterCredentials u) {
         if (u.getName()==null || u.getEmail()==null || u.getName().equals("") || u.getEmail().equals("")
         || u.getPassword() == null || u.getPassword().equals(""))  return Response.status(500).entity(u).build();
 
         else {
             try {
-                String id = instance.addUser(u);
+                User user = new User(u.getName(),u.getEmail(), u.getPassword());
+                String id = instance.addUser(user);
                 if (id != null) {
                     User newUser = instance.getUserByID(id);
                     UserTO userTO = new UserTO();
@@ -85,7 +85,7 @@ public class UserService {
     @PUT
     @ApiOperation(value = "update User data", notes = "updated")
     @ApiResponses(value = {
-            @ApiResponse(code = 201, message = "Successful",response = dsa.grupo2.models.User.class),
+            @ApiResponse(code = 201, message = "Successful",response = User.class),
             @ApiResponse(code = 404, message = "User not found")
     })
     @Path("/{id}")
@@ -144,5 +144,4 @@ public class UserService {
             return Response.status(500).build();
         }
     }
-
 }

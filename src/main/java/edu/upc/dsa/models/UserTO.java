@@ -1,23 +1,31 @@
 package edu.upc.dsa.models;
 
-import dsa.grupo2.models.User;
 
 public class UserTO {
     private String name;
     private String email;
     private String id;
     private int exp;
+    private int level;
 
     public UserTO() {
     }
 
 
-    public UserTO(String name, String email, String id) {
+    public UserTO(String name, String email, String id, int level) {
         this.name = name;
         this.email = email;
         this.id = id;
+        this.level = level;
     }
 
+    public int getLevel() {
+        return level;
+    }
+
+    public void setLevel(int level) {
+        this.level = level;
+    }
 
     public String getName() {
         return name;
@@ -56,5 +64,6 @@ public class UserTO {
         this.email = u.getEmail();
         this.id = u.getId();
         this.exp = u.getExp();
+        this.level = u.getLevel();
     }
 }

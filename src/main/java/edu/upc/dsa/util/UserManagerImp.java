@@ -1,7 +1,8 @@
 package edu.upc.dsa.util;
 
-import dsa.grupo2.UserDaoImp;
-import dsa.grupo2.models.User;
+import edu.upc.dsa.DAO.GameDAOImp;
+import edu.upc.dsa.DAO.UserDAOImp;
+import edu.upc.dsa.models.User;
 import org.apache.log4j.Logger;
 
 import java.util.HashMap;
@@ -12,11 +13,13 @@ public class UserManagerImp implements UserManager {
 
     private static UserManagerImp instance;
 
-    private UserDaoImp userDB;
+    private UserDAOImp userDB;
+    private GameDAOImp gameDB;
 
 
     private UserManagerImp() {
-        userDB = new UserDaoImp();
+        userDB = new UserDAOImp();
+        gameDB = new GameDAOImp();
     }
 
     public static UserManagerImp getInstance() {
@@ -42,6 +45,8 @@ public class UserManagerImp implements UserManager {
 
         if (test == null) {
             id = userDB.addUser(user.getName(),user.getEmail(), user.getPassword());
+            User newUser = userDB.getUser("id", id);
+            gameDB.createGame(newUser);
         }
         else {
             id = null;
@@ -58,5 +63,11 @@ public class UserManagerImp implements UserManager {
     @Override
     public String checkLogin(User user) {
         return userDB.checkLogin(user.getName(), user.getPassword());
+    }
+
+    public boolean deleteUser(String id) {
+        User u = getUserByID(id);
+        boolean deleted = userDB.deleteUser(u);
+        return deleted;
     }
 }
