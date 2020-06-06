@@ -1,10 +1,7 @@
 package edu.upc.dsa.services;
 
 
-import edu.upc.dsa.models.BestLevel;
-import edu.upc.dsa.models.Message;
-import edu.upc.dsa.models.User;
-import edu.upc.dsa.models.UserTO;
+import edu.upc.dsa.models.*;
 import edu.upc.dsa.util.MessageManager;
 import edu.upc.dsa.util.MessageManagerImp;
 import io.swagger.annotations.Api;
@@ -31,9 +28,8 @@ public class ForumService {
             @ApiResponse(code = 500, message = "Validation Error")
     })
 
-    @Path("/forum")
     @Consumes(MediaType.APPLICATION_JSON)
-    public Response sendMessage(Message msg) {
+    public Response sendMessage(ReceivedMessage msg) {
         msgManager.addMessage(msg);
         return Response.status(201).build();
     }
@@ -43,7 +39,6 @@ public class ForumService {
     @ApiResponses(value = {
             @ApiResponse(code = 201, message = "Successful", response = Message.class, responseContainer="List"),
     })
-    @Path("/forum")
     @Produces(MediaType.APPLICATION_JSON)
     public Response getMessages() {
         List<Message> messages = msgManager.getAllMessages();

@@ -2,6 +2,7 @@ package edu.upc.dsa.util;
 
 import edu.upc.dsa.DAO.*;
 import edu.upc.dsa.models.Message;
+import edu.upc.dsa.models.ReceivedMessage;
 
 import java.util.ArrayList;
 
@@ -21,8 +22,9 @@ public class MessageManagerImp implements MessageManager{
     }
 
     @Override
-    public void addMessage(Message msg) {
-        msgDB.AddMessage(msg);
+    public void addMessage(ReceivedMessage msg) {
+        Message newMsg = new Message(msg.getUsername(), msg.getContent());
+        msgDB.AddMessage(newMsg);
     }
 
     @Override
