@@ -8,6 +8,7 @@ import java.util.ArrayList;
 public interface BestLevelDAO {
 
     void saveBestLevel(BestLevel bestLevel);
+    BestLevel getBestLevel(int lvlNumber, User user);
     ArrayList<BestLevel> getBestLevelsByUser(User user);
     ArrayList<BestLevel> getBestLevelsByLevel(int lvlNumber);
     BestLevel updateBestLevel(BestLevel level);

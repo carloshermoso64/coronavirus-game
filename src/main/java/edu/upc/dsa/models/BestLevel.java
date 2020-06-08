@@ -2,7 +2,7 @@ package edu.upc.dsa.models;
 
 import org.apache.commons.lang3.RandomStringUtils;
 
-import java.sql.Date;
+import java.util.Date;
 
 
 public class BestLevel {
@@ -10,7 +10,7 @@ public class BestLevel {
     private int levelNumber;
     private int bestScore;
     private int bestTime;
-    //private Date startTime;
+    private Date startDate;
     private String idUser;
 
 
@@ -23,8 +23,7 @@ public class BestLevel {
         this.bestScore = bestScore;
         this.bestTime = bestTime;
         this.idUser = idUser;
-        //java.util.Date date = new java.util.Date();
-        //this.startTime = new Date(date.getTime());
+        this.startDate = new Date();
     }
 
     public String getId() {
@@ -65,5 +64,13 @@ public class BestLevel {
 
     public void setIdUser(String idUser) {
         this.idUser = idUser;
+    }
+
+    public Date getStartDate() {
+        return startDate;
+    }
+
+    public void setStartDate(Date startTime) {
+        this.startDate = startTime;
     }
 }

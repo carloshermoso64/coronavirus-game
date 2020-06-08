@@ -5,6 +5,7 @@ import edu.upc.dsa.models.Message;
 import edu.upc.dsa.models.ReceivedMessage;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 public class MessageManagerImp implements MessageManager{
 
@@ -24,6 +25,7 @@ public class MessageManagerImp implements MessageManager{
     @Override
     public void addMessage(ReceivedMessage msg) {
         Message newMsg = new Message(msg.getUsername(), msg.getContent());
+        newMsg.setReceivedDate(new Date());
         msgDB.AddMessage(newMsg);
     }
 

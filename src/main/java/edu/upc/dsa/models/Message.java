@@ -2,11 +2,13 @@ package edu.upc.dsa.models;
 
 import org.apache.commons.lang3.RandomStringUtils;
 
+import java.util.Date;
+
 public class Message {
     private String id;
     private String username;
     private String content;
-    //private date receivedDate;
+    private Date receivedDate;
 
 
     public Message() {
@@ -16,6 +18,7 @@ public class Message {
         this.id = RandomStringUtils.randomAlphanumeric(8);
         this.username = username;
         this.content = content;
+        this.receivedDate = new Date();
     }
 
     public String getId() {
@@ -40,5 +43,13 @@ public class Message {
 
     public void setContent(String content) {
         this.content = content;
+    }
+
+    public Date getReceivedDate() {
+        return receivedDate;
+    }
+
+    public void setReceivedDate(Date receivedDate) {
+        this.receivedDate = receivedDate;
     }
 }

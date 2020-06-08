@@ -8,4 +8,5 @@ public interface LevelDAO {
     Level getLevel(int levelNumber);
     Level addLevel(Level level);
     ArrayList<Level> listAllLevels();
+    int countLevels();
 }

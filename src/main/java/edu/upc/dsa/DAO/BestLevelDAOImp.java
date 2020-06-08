@@ -25,6 +25,27 @@ public class BestLevelDAOImp implements BestLevelDAO{
         }
     }
 
+    public BestLevel getBestLevel(int lvlNumber, User user) {
+        Session session = null;
+        ArrayList<BestLevel> bestLevels = null;
+        try {
+            session = FactorySession.openSession();
+            HashMap<String, String> params = new HashMap<String, String>();
+            params.put("idUser", user.getId());
+            params.put("levelNumber", String.valueOf(lvlNumber));
+            bestLevels = (ArrayList<BestLevel>) session.findAll(BestLevel.class,params);
+        }
+        catch (Exception e) {
+        }
+        finally {
+            session.close();
+        }
+        if (bestLevels.size() == 0)
+            return null;
+        else
+            return bestLevels.get(0);
+    }
+
     @Override
     public ArrayList<BestLevel> getBestLevelsByUser(User user) {
         Session session = null;
@@ -63,6 +84,17 @@ public class BestLevelDAOImp implements BestLevelDAO{
 
     @Override
     public BestLevel updateBestLevel(BestLevel level) {
-        return null;
+        Session session = null;
+
+        try {
+            session = FactorySession.openSession();
+            session.update(level, level.getId());
+        }
+        catch (Exception e) {
+        }
+        finally {
+            session.close();
+        }
+        return level;
     }
 }

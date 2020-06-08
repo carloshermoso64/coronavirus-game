@@ -30,6 +30,8 @@ public class ForumService {
 
     @Consumes(MediaType.APPLICATION_JSON)
     public Response sendMessage(ReceivedMessage msg) {
+
+
         msgManager.addMessage(msg);
         return Response.status(201).build();
     }

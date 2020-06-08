@@ -6,6 +6,7 @@ import edu.upc.dsa.models.Level;
 
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class LevelDAOImp implements LevelDAO {
 
@@ -58,6 +59,25 @@ public class LevelDAOImp implements LevelDAO {
             session.close();
         }
         return levels;
+    }
+
+    @Override
+    public int countLevels() {
+        Session session = null;
+        int levelsNum = 0;
+        try {
+            session = FactorySession.openSession();
+            HashMap<String,String> params = new HashMap<String, String>();
+            levelsNum= session.count(Level.class, params);
+        }
+
+        catch (Exception e) {
+            return -1;
+        }
+        finally {
+            session.close();
+        }
+        return levelsNum;
     }
 
 }

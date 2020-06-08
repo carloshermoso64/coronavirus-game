@@ -9,5 +9,4 @@ public interface MessageManager {
 
     void addMessage(ReceivedMessage msg);
     ArrayList<Message> getAllMessages();
-
 }
