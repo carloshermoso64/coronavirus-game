@@ -1,10 +1,7 @@
 package edu.upc.dsa.services;
 
 
-import edu.upc.dsa.models.BestLevel;
-import edu.upc.dsa.models.ShopItem;
-import edu.upc.dsa.models.User;
-import edu.upc.dsa.models.UserTO;
+import edu.upc.dsa.models.*;
 import edu.upc.dsa.util.StatsManager;
 import edu.upc.dsa.util.StatsManagerImp;
 import io.swagger.annotations.Api;
@@ -48,14 +45,14 @@ public class StatsService {
     @GET
     @ApiOperation(value = "get scores of a level", notes = "")
     @ApiResponses(value = {
-            @ApiResponse(code = 201, message = "Successful", response = UserTO.class, responseContainer="List"),
+            @ApiResponse(code = 201, message = "Successful", response = BestLevelTO.class, responseContainer="List"),
     })
     @Path("/levelscores/{levelnumber}")
     @Produces(MediaType.APPLICATION_JSON)
     public Response getBestLevels(@PathParam("levelnumber") int level) {
-        List<BestLevel> ranking = statsManager.getSortedBestScoresOfLevel(level);
+        List<BestLevelTO> ranking = statsManager.getSortedBestScoresOfLevel(level);
 
-        GenericEntity<List<BestLevel>> entity = new GenericEntity<List<BestLevel>>(ranking) {};
+        GenericEntity<List<BestLevelTO>> entity = new GenericEntity<List<BestLevelTO>>(ranking) {};
         if (ranking.size() > 0) {
             return Response.status(201).entity(entity).build();
         }
@@ -72,9 +69,9 @@ public class StatsService {
     @Path("/userscores/{username}")
     @Produces(MediaType.APPLICATION_JSON)
     public Response getBestLevels(@PathParam("username") String username) {
-        List<BestLevel> ranking = statsManager.getSortedBestLevelsOfUser(username);
+        List<BestLevelTO> ranking = statsManager.getSortedBestLevelsOfUser(username);
 
-        GenericEntity<List<BestLevel>> entity = new GenericEntity<List<BestLevel>>(ranking) {};
+        GenericEntity<List<BestLevelTO>> entity = new GenericEntity<List<BestLevelTO>>(ranking) {};
         if (ranking.size() > 0) {
             return Response.status(201).entity(entity).build();
         }

@@ -2,6 +2,7 @@ package edu.upc.dsa.util;
 
 import edu.upc.dsa.DAO.*;
 import edu.upc.dsa.models.BestLevel;
+import edu.upc.dsa.models.BestLevelTO;
 import edu.upc.dsa.models.User;
 import edu.upc.dsa.models.UserTO;
 
@@ -28,9 +29,10 @@ public class StatsManagerImp implements StatsManager{
     }
 
     @Override
-    public ArrayList<BestLevel> getSortedBestLevelsOfUser(String name) {
+    public ArrayList<BestLevelTO> getSortedBestLevelsOfUser(String name) {
         User user = userDB.getUser("name", name);
         ArrayList<BestLevel> levels = levelDB.getBestLevelsByUser(user);
+        ArrayList<BestLevelTO> levelTOS = new ArrayList<BestLevelTO>();
 
         Collections.sort(levels, new Comparator<BestLevel>() {
             @Override
@@ -38,19 +40,30 @@ public class StatsManagerImp implements StatsManager{
                 return o1.getLevelNumber() - o2.getLevelNumber();
             }
         });
-        return  levels;
+
+        for (BestLevel lvl : levels) {
+            levelTOS.add(this.convertToTrans(lvl));
+        }
+
+        return  levelTOS;
     }
 
     @Override
-    public ArrayList<BestLevel> getSortedBestScoresOfLevel(int levelNumber) {
+    public ArrayList<BestLevelTO> getSortedBestScoresOfLevel(int levelNumber) {
         ArrayList<BestLevel> levels = levelDB.getBestLevelsByLevel(levelNumber);
+        ArrayList<BestLevelTO> levelTOS = new ArrayList<BestLevelTO>();
         Collections.sort(levels, new Comparator<BestLevel>() {
             @Override
             public int compare(BestLevel o1, BestLevel o2) {
                 return o2.getBestScore() - o1.getBestScore();
             }
         });
-        return levels;
+
+        for (BestLevel lvl : levels) {
+            levelTOS.add(this.convertToTrans(lvl));
+        }
+
+        return  levelTOS;
     }
 
     @Override
@@ -69,5 +82,21 @@ public class StatsManagerImp implements StatsManager{
             userTOArrayList.add(userTO);
         }
         return userTOArrayList;
+    }
+
+
+    public BestLevelTO convertToTrans(BestLevel lvl) {
+        BestLevelTO bestLevelTO = new BestLevelTO();
+
+        bestLevelTO.setId(lvl.getId());
+        bestLevelTO.setBestScore(lvl.getBestScore());
+        bestLevelTO.setBestTime(lvl.getBestTime());
+        bestLevelTO.setLevelNumber(lvl.getLevelNumber());
+        bestLevelTO.setStartDate(lvl.getStartDate());
+
+        User user = userDB.getUser("id", lvl.getIdUser());
+        bestLevelTO.setUsername(user.getName());
+
+        return bestLevelTO;
     }
 }
