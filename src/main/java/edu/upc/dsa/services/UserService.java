@@ -105,9 +105,6 @@ public class UserService {
         }
     }
 
-
-
-
     @POST
     @ApiOperation(value = "Login", notes = "Check login")
     @ApiResponses(value = {
@@ -143,5 +140,30 @@ public class UserService {
             ex.printStackTrace();
             return Response.status(500).build();
         }
+    }
+
+    @GET
+    @ApiOperation(value = "Get Info of User by username", notes = "You will see the info of the user")
+    @ApiResponses(value = {
+            @ApiResponse(code = 201, message = "Successful", response = UserTO.class, responseContainer=""),
+    })
+    @Path("/search/{id}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response userInfoById(@PathParam("id") String id) {
+
+        if (id.equals("")) return Response.status(404).build();
+        else {
+            try {
+                User user = instance.getUserByID(id);
+                UserTO userTO = new UserTO();
+                userTO.setTO(user);
+                return Response.status(201).entity(userTO).build();
+
+            } catch (Exception ex) {
+                ex.printStackTrace();
+                return Response.status(404).build();
+            }
+        }
+
     }
 }

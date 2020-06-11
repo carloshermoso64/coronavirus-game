@@ -35,7 +35,7 @@ public class UserManagerImp implements UserManager {
 
     @Override
     public User getUserByID(String id) {
-        return userDB.getUser("ID", id);
+        return userDB.getUser("id", id);
     }
 
     @Override
