@@ -9,10 +9,19 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
+import org.glassfish.jersey.media.multipart.FormDataContentDisposition;
+import org.glassfish.jersey.media.multipart.FormDataParam;
 
+import javax.imageio.ImageIO;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import java.awt.image.BufferedImage;
+import java.awt.image.RenderedImage;
+import java.io.File;
+import java.io.InputStream;
+import java.nio.file.FileSystems;
+import java.nio.file.Files;
 
 
 @Api(value = "/user", description = "Endpoint de usuarios")
@@ -166,4 +175,43 @@ public class UserService {
         }
 
     }
+
+
+    @POST
+    @Path("/image/{userid}")
+    @ApiOperation(value = "upload image", notes = "You will see the info of the user")
+    @ApiResponses(value = {
+            @ApiResponse(code = 201, message = "Successful"),
+    })
+    @Consumes(MediaType.MULTIPART_FORM_DATA)
+    public Response uploadFile(@FormDataParam("file") InputStream file,
+                               @FormDataParam("file") FormDataContentDisposition fileDisposition,
+                                @PathParam("userid") String id) {
+        try {
+            String fileName = fileDisposition.getFileName();
+            String[] parts = fileName.split("\\.");
+                String newFilename = id + ".png";
+                java.nio.file.Path path = FileSystems.getDefault().getPath(System.getProperty("user.dir") + "/images/" + newFilename);
+                Files.copy(file, path);
+        }
+        catch (Exception e) {
+            int c = 1;
+        }
+        int c = 1;
+        return Response.status(201).build();
+    }
+
+    @GET
+    @Path("/image/{userid}")
+    @ApiOperation(value = "get image", notes = "You will see the info of the user")
+    @Produces("image/png")
+    public Response getImage(@PathParam("userid") String userid) {
+        java.nio.file.Path path = FileSystems.getDefault().getPath(System.getProperty("user.dir")+ "/images/"+userid+".png");
+        File file = new File(String.valueOf(path));
+        Response.ResponseBuilder response = Response.ok((Object) file);
+        response.header("Content-Disposition", "attachment; filename="+userid+".png");
+        int c = 1;
+        return response.build();
+    }
+
 }
