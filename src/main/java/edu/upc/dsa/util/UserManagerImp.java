@@ -1,7 +1,9 @@
 package edu.upc.dsa.util;
 
 import edu.upc.dsa.DAO.GameDAOImp;
+import edu.upc.dsa.DAO.TokenDAOImp;
 import edu.upc.dsa.DAO.UserDAOImp;
+import edu.upc.dsa.models.Token;
 import edu.upc.dsa.models.User;
 import org.apache.log4j.Logger;
 
@@ -15,11 +17,13 @@ public class UserManagerImp implements UserManager {
 
     private UserDAOImp userDB;
     private GameDAOImp gameDB;
+    private TokenDAOImp tokenDB;
 
 
     private UserManagerImp() {
         userDB = new UserDAOImp();
         gameDB = new GameDAOImp();
+        tokenDB = new TokenDAOImp();
     }
 
     public static UserManagerImp getInstance() {
@@ -62,12 +66,37 @@ public class UserManagerImp implements UserManager {
 
     @Override
     public String checkLogin(User user) {
-        return userDB.checkLogin(user.getName(), user.getPassword());
+
+        user = userDB.getUser("name", user.getName());
+        Token t = (tokenDB.getToken(user));
+
+        if (t != null) {
+            return t.getId();
+        }
+        else {
+            return userDB.checkLogin(user.getName(), user.getPassword());
+        }
     }
 
     public boolean deleteUser(String id) {
         User u = getUserByID(id);
         boolean deleted = userDB.deleteUser(u);
         return deleted;
+    }
+
+    public boolean logOut(Token t) {
+        boolean exists = tokenDB.checkToken(t.getId());
+        if(exists) {
+            User u = userDB.getUser("id", t.getIdUser());
+            Token trueToken = tokenDB.getToken(u);
+            if (trueToken.getId().equals(t.getId())) {
+                tokenDB.delToken(t);
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+        return false;
     }
 }

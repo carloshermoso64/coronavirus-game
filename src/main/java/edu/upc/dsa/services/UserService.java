@@ -1,9 +1,6 @@
 package edu.upc.dsa.services;
 
-import edu.upc.dsa.models.Credentials;
-import edu.upc.dsa.models.RegisterCredentials;
-import edu.upc.dsa.models.User;
-import edu.upc.dsa.models.UserTO;
+import edu.upc.dsa.models.*;
 import edu.upc.dsa.util.UserManagerImp;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -213,5 +210,20 @@ public class UserService {
         int c = 1;
         return response.build();
     }
+
+    @POST
+    @Path("/logout")
+    @ApiOperation(value = "log out from game", notes = "You will see the info of the user")
+    @Consumes(MediaType.APPLICATION_JSON)
+    public Response logOut(Token t) {
+        boolean done = instance.logOut(t);
+        if (done) {
+            return Response.status(201).build();
+        }
+        else {
+            return Response.status(404).build();
+        }
+    }
+
 
 }

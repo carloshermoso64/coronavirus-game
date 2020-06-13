@@ -3,6 +3,7 @@ package edu.upc.dsa.DAO;
 import dsa.grupo2.FactorySession;
 import dsa.grupo2.Session;
 import edu.upc.dsa.models.Token;
+import edu.upc.dsa.models.User;
 
 import java.util.HashMap;
 
@@ -79,5 +80,36 @@ public class TokenDAOImp implements TokenDAO {
             session.close();
         }
         return false;
+    }
+
+    public Token getToken(User user) {
+        Session session = null;
+        try {
+            Token t = null;
+            session = FactorySession.openSession();
+            t = (Token) session.get(Token.class, "idUser", user.getId());
+            return t;
+        }
+
+        catch (Exception e) {
+            return null;
+        }
+        finally {
+            session.close();
+        }
+    }
+
+    public void delToken(Token t) {
+        Session session = null;
+        try {
+            session = FactorySession.openSession();
+            session.delete(t);
+        }
+
+        catch (Exception e) {
+        }
+        finally {
+            session.close();
+        }
     }
 }

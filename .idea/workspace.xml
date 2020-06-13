@@ -3,8 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="d7f07586-0424-457a-9802-d52da91bce62" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/DAO/TokenDAOImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/DAO/TokenDAOImp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/services/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/util/UserManagerImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/util/UserManagerImp.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,12 +53,12 @@
     <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\carlo\Desktop\4A\DSA_Teoria\coronavirus-game\src\main\resources" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/java/edu/upc/dsa/lib" />
       <recent name="C:\Users\carlo\Desktop\4A\DSA_Teoria\coronavirus-game\src\main\java\edu\upc\dsa\lib" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\carlo\Desktop\4A\DSA_Teoria\coronavirus-game\src\main\resources" />
     </key>
   </component>
   <component name="RunManager" selected="Application.Main">
@@ -241,81 +242,81 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="105" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1589131075381" />
-    <state width="1638" height="295" key="GridCell.Tab.0.bottom" timestamp="1592081726235">
-      <screen x="0" y="0" width="1680" height="1050" />
+    <state width="1638" height="295" key="GridCell.Tab.0.bottom" timestamp="1592092406890">
+      <screen x="0" y="23" width="1680" height="951" />
     </state>
     <state width="1323" height="161" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1589156210908" />
-    <state width="1638" height="295" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1592081726235" />
+    <state width="1638" height="363" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1592092264911" />
     <state width="1638" height="295" key="GridCell.Tab.0.bottom/0.23.1680.1027@0.23.1680.1027" timestamp="1590752893622" />
     <state width="1638" height="295" key="GridCell.Tab.0.bottom/0.23.1680.947@0.23.1680.947" timestamp="1591642205701" />
     <state width="1638" height="363" key="GridCell.Tab.0.bottom/0.23.1680.948@0.23.1680.948" timestamp="1592071685101" />
-    <state width="1638" height="295" key="GridCell.Tab.0.bottom/0.23.1680.951@0.23.1680.951" timestamp="1592075013684" />
+    <state width="1638" height="295" key="GridCell.Tab.0.bottom/0.23.1680.951@0.23.1680.951" timestamp="1592092406890" />
     <state width="1638" height="295" key="GridCell.Tab.0.bottom/0.23.1680.953@0.23.1680.953" timestamp="1592075431193" />
     <state width="1638" height="295" key="GridCell.Tab.0.bottom/0.23.1680.957@0.23.1680.957" timestamp="1591867969851" />
-    <state width="1638" height="295" key="GridCell.Tab.0.center" timestamp="1592081726233">
-      <screen x="0" y="0" width="1680" height="1050" />
+    <state width="1638" height="295" key="GridCell.Tab.0.center" timestamp="1592092406889">
+      <screen x="0" y="23" width="1680" height="951" />
     </state>
     <state width="1323" height="161" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1589156210908" />
-    <state width="1638" height="295" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1592081726233" />
+    <state width="1638" height="363" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1592092264910" />
     <state width="1638" height="295" key="GridCell.Tab.0.center/0.23.1680.1027@0.23.1680.1027" timestamp="1590752893620" />
     <state width="1638" height="295" key="GridCell.Tab.0.center/0.23.1680.947@0.23.1680.947" timestamp="1591642205700" />
     <state width="1638" height="363" key="GridCell.Tab.0.center/0.23.1680.948@0.23.1680.948" timestamp="1592071685097" />
-    <state width="1638" height="295" key="GridCell.Tab.0.center/0.23.1680.951@0.23.1680.951" timestamp="1592075013681" />
+    <state width="1638" height="295" key="GridCell.Tab.0.center/0.23.1680.951@0.23.1680.951" timestamp="1592092406889" />
     <state width="1638" height="295" key="GridCell.Tab.0.center/0.23.1680.953@0.23.1680.953" timestamp="1592075431189" />
     <state width="1638" height="295" key="GridCell.Tab.0.center/0.23.1680.957@0.23.1680.957" timestamp="1591867969849" />
-    <state width="1638" height="295" key="GridCell.Tab.0.left" timestamp="1592081726233">
-      <screen x="0" y="0" width="1680" height="1050" />
+    <state width="1638" height="295" key="GridCell.Tab.0.left" timestamp="1592092406888">
+      <screen x="0" y="23" width="1680" height="951" />
     </state>
     <state width="1323" height="161" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1589156210908" />
-    <state width="1638" height="295" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1592081726233" />
+    <state width="1638" height="363" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1592092264909" />
     <state width="1638" height="295" key="GridCell.Tab.0.left/0.23.1680.1027@0.23.1680.1027" timestamp="1590752893619" />
     <state width="1638" height="295" key="GridCell.Tab.0.left/0.23.1680.947@0.23.1680.947" timestamp="1591642205699" />
     <state width="1638" height="363" key="GridCell.Tab.0.left/0.23.1680.948@0.23.1680.948" timestamp="1592071685096" />
-    <state width="1638" height="295" key="GridCell.Tab.0.left/0.23.1680.951@0.23.1680.951" timestamp="1592075013678" />
+    <state width="1638" height="295" key="GridCell.Tab.0.left/0.23.1680.951@0.23.1680.951" timestamp="1592092406888" />
     <state width="1638" height="295" key="GridCell.Tab.0.left/0.23.1680.953@0.23.1680.953" timestamp="1592075431188" />
     <state width="1638" height="295" key="GridCell.Tab.0.left/0.23.1680.957@0.23.1680.957" timestamp="1591867969849" />
-    <state width="1638" height="295" key="GridCell.Tab.0.right" timestamp="1592081726234">
-      <screen x="0" y="0" width="1680" height="1050" />
+    <state width="1638" height="295" key="GridCell.Tab.0.right" timestamp="1592092406890">
+      <screen x="0" y="23" width="1680" height="951" />
     </state>
     <state width="1323" height="161" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1589156210908" />
-    <state width="1638" height="295" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1592081726234" />
+    <state width="1638" height="363" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1592092264910" />
     <state width="1638" height="295" key="GridCell.Tab.0.right/0.23.1680.1027@0.23.1680.1027" timestamp="1590752893621" />
     <state width="1638" height="295" key="GridCell.Tab.0.right/0.23.1680.947@0.23.1680.947" timestamp="1591642205700" />
     <state width="1638" height="363" key="GridCell.Tab.0.right/0.23.1680.948@0.23.1680.948" timestamp="1592071685099" />
-    <state width="1638" height="295" key="GridCell.Tab.0.right/0.23.1680.951@0.23.1680.951" timestamp="1592075013682" />
+    <state width="1638" height="295" key="GridCell.Tab.0.right/0.23.1680.951@0.23.1680.951" timestamp="1592092406890" />
     <state width="1638" height="295" key="GridCell.Tab.0.right/0.23.1680.953@0.23.1680.953" timestamp="1592075431190" />
     <state width="1638" height="295" key="GridCell.Tab.0.right/0.23.1680.957@0.23.1680.957" timestamp="1591867969850" />
-    <state width="1638" height="363" key="GridCell.Tab.1.bottom" timestamp="1592074716729">
-      <screen x="0" y="0" width="1680" height="1050" />
+    <state width="1638" height="363" key="GridCell.Tab.1.bottom" timestamp="1592092406287">
+      <screen x="0" y="23" width="1680" height="951" />
     </state>
-    <state width="1638" height="363" key="GridCell.Tab.1.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1592074716729" />
+    <state width="1638" height="363" key="GridCell.Tab.1.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1592092264793" />
     <state width="1638" height="363" key="GridCell.Tab.1.bottom/0.23.1680.947@0.23.1680.947" timestamp="1591641240856" />
     <state width="1638" height="363" key="GridCell.Tab.1.bottom/0.23.1680.948@0.23.1680.948" timestamp="1592072425905" />
-    <state width="1638" height="363" key="GridCell.Tab.1.bottom/0.23.1680.951@0.23.1680.951" timestamp="1592074640132" />
+    <state width="1638" height="363" key="GridCell.Tab.1.bottom/0.23.1680.951@0.23.1680.951" timestamp="1592092406287" />
     <state width="1638" height="363" key="GridCell.Tab.1.bottom/0.23.1680.957@0.23.1680.957" timestamp="1591868280109" />
-    <state width="1638" height="363" key="GridCell.Tab.1.center" timestamp="1592074716728">
-      <screen x="0" y="0" width="1680" height="1050" />
+    <state width="1638" height="363" key="GridCell.Tab.1.center" timestamp="1592092406285">
+      <screen x="0" y="23" width="1680" height="951" />
     </state>
-    <state width="1638" height="363" key="GridCell.Tab.1.center/0.0.1680.1050@0.0.1680.1050" timestamp="1592074716728" />
+    <state width="1638" height="363" key="GridCell.Tab.1.center/0.0.1680.1050@0.0.1680.1050" timestamp="1592092264791" />
     <state width="1638" height="363" key="GridCell.Tab.1.center/0.23.1680.947@0.23.1680.947" timestamp="1591641240855" />
     <state width="1638" height="363" key="GridCell.Tab.1.center/0.23.1680.948@0.23.1680.948" timestamp="1592072425904" />
-    <state width="1638" height="363" key="GridCell.Tab.1.center/0.23.1680.951@0.23.1680.951" timestamp="1592074640131" />
+    <state width="1638" height="363" key="GridCell.Tab.1.center/0.23.1680.951@0.23.1680.951" timestamp="1592092406285" />
     <state width="1638" height="363" key="GridCell.Tab.1.center/0.23.1680.957@0.23.1680.957" timestamp="1591868280108" />
-    <state width="1638" height="363" key="GridCell.Tab.1.left" timestamp="1592074716728">
-      <screen x="0" y="0" width="1680" height="1050" />
+    <state width="1638" height="363" key="GridCell.Tab.1.left" timestamp="1592092406285">
+      <screen x="0" y="23" width="1680" height="951" />
     </state>
-    <state width="1638" height="363" key="GridCell.Tab.1.left/0.0.1680.1050@0.0.1680.1050" timestamp="1592074716728" />
+    <state width="1638" height="363" key="GridCell.Tab.1.left/0.0.1680.1050@0.0.1680.1050" timestamp="1592092264791" />
     <state width="1638" height="363" key="GridCell.Tab.1.left/0.23.1680.947@0.23.1680.947" timestamp="1591641240855" />
     <state width="1638" height="363" key="GridCell.Tab.1.left/0.23.1680.948@0.23.1680.948" timestamp="1592072425904" />
-    <state width="1638" height="363" key="GridCell.Tab.1.left/0.23.1680.951@0.23.1680.951" timestamp="1592074640131" />
+    <state width="1638" height="363" key="GridCell.Tab.1.left/0.23.1680.951@0.23.1680.951" timestamp="1592092406285" />
     <state width="1638" height="363" key="GridCell.Tab.1.left/0.23.1680.957@0.23.1680.957" timestamp="1591868280108" />
-    <state width="1638" height="363" key="GridCell.Tab.1.right" timestamp="1592074716729">
-      <screen x="0" y="0" width="1680" height="1050" />
+    <state width="1638" height="363" key="GridCell.Tab.1.right" timestamp="1592092406286">
+      <screen x="0" y="23" width="1680" height="951" />
     </state>
-    <state width="1638" height="363" key="GridCell.Tab.1.right/0.0.1680.1050@0.0.1680.1050" timestamp="1592074716729" />
+    <state width="1638" height="363" key="GridCell.Tab.1.right/0.0.1680.1050@0.0.1680.1050" timestamp="1592092264792" />
     <state width="1638" height="363" key="GridCell.Tab.1.right/0.23.1680.947@0.23.1680.947" timestamp="1591641240856" />
     <state width="1638" height="363" key="GridCell.Tab.1.right/0.23.1680.948@0.23.1680.948" timestamp="1592072425904" />
-    <state width="1638" height="363" key="GridCell.Tab.1.right/0.23.1680.951@0.23.1680.951" timestamp="1592074640132" />
+    <state width="1638" height="363" key="GridCell.Tab.1.right/0.23.1680.951@0.23.1680.951" timestamp="1592092406286" />
     <state width="1638" height="363" key="GridCell.Tab.1.right/0.23.1680.957@0.23.1680.957" timestamp="1591868280109" />
     <state x="213" y="19" key="Maven.ArtifactSearchDialog" timestamp="1589072438772">
       <screen x="0" y="0" width="1366" height="728" />
@@ -514,8 +515,153 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/edu/upc/dsa/util/UserManagerImp.java</url>
-          <line>37</line>
+          <line>41</line>
           <option name="timeStamp" value="66" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/upc/dsa/DAO/TokenDAOImp.java</url>
+          <line>13</line>
+          <option name="timeStamp" value="84" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/upc/dsa/DAO/TokenDAOImp.java</url>
+          <line>14</line>
+          <option name="timeStamp" value="85" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/upc/dsa/DAO/TokenDAOImp.java</url>
+          <line>15</line>
+          <option name="timeStamp" value="86" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/upc/dsa/DAO/TokenDAOImp.java</url>
+          <line>17</line>
+          <option name="timeStamp" value="87" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/upc/dsa/DAO/TokenDAOImp.java</url>
+          <line>18</line>
+          <option name="timeStamp" value="88" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/upc/dsa/DAO/TokenDAOImp.java</url>
+          <line>19</line>
+          <option name="timeStamp" value="89" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/upc/dsa/DAO/TokenDAOImp.java</url>
+          <line>20</line>
+          <option name="timeStamp" value="90" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/upc/dsa/DAO/TokenDAOImp.java</url>
+          <line>27</line>
+          <option name="timeStamp" value="91" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/upc/dsa/DAO/UserDAOImp.java</url>
+          <line>89</line>
+          <option name="timeStamp" value="92" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/upc/dsa/DAO/UserDAOImp.java</url>
+          <line>90</line>
+          <option name="timeStamp" value="93" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/upc/dsa/DAO/UserDAOImp.java</url>
+          <line>92</line>
+          <option name="timeStamp" value="94" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/upc/dsa/DAO/UserDAOImp.java</url>
+          <line>91</line>
+          <option name="timeStamp" value="95" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/upc/dsa/DAO/UserDAOImp.java</url>
+          <line>94</line>
+          <option name="timeStamp" value="97" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/upc/dsa/DAO/UserDAOImp.java</url>
+          <line>95</line>
+          <option name="timeStamp" value="98" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/upc/dsa/DAO/UserDAOImp.java</url>
+          <line>98</line>
+          <option name="timeStamp" value="99" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/upc/dsa/DAO/UserDAOImp.java</url>
+          <line>100</line>
+          <option name="timeStamp" value="100" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/upc/dsa/DAO/UserDAOImp.java</url>
+          <line>99</line>
+          <option name="timeStamp" value="101" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/upc/dsa/DAO/UserDAOImp.java</url>
+          <line>97</line>
+          <option name="timeStamp" value="102" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/upc/dsa/util/UserManagerImp.java</url>
+          <line>69</line>
+          <option name="timeStamp" value="103" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/upc/dsa/util/UserManagerImp.java</url>
+          <line>72</line>
+          <option name="timeStamp" value="104" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/upc/dsa/util/UserManagerImp.java</url>
+          <line>75</line>
+          <option name="timeStamp" value="105" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/upc/dsa/DAO/TokenDAOImp.java</url>
+          <line>40</line>
+          <option name="timeStamp" value="106" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/upc/dsa/DAO/TokenDAOImp.java</url>
+          <line>41</line>
+          <option name="timeStamp" value="107" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/upc/dsa/DAO/TokenDAOImp.java</url>
+          <line>44</line>
+          <option name="timeStamp" value="108" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/upc/dsa/DAO/TokenDAOImp.java</url>
+          <line>43</line>
+          <option name="timeStamp" value="109" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/upc/dsa/DAO/TokenDAOImp.java</url>
+          <line>45</line>
+          <option name="timeStamp" value="110" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/upc/dsa/DAO/TokenDAOImp.java</url>
+          <line>46</line>
+          <option name="timeStamp" value="111" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/upc/dsa/DAO/TokenDAOImp.java</url>
+          <line>48</line>
+          <option name="timeStamp" value="112" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/upc/dsa/DAO/TokenDAOImp.java</url>
+          <line>50</line>
+          <option name="timeStamp" value="113" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
