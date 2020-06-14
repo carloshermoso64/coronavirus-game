@@ -67,8 +67,8 @@ public class UserManagerImp implements UserManager {
     @Override
     public String checkLogin(User user) {
 
-        user = userDB.getUser("name", user.getName());
-        Token t = (tokenDB.getToken(user));
+        User userToCheck = userDB.getUser("name", user.getName());
+        Token t = (tokenDB.getToken(userToCheck));
 
         if (t != null) {
             return t.getId();
