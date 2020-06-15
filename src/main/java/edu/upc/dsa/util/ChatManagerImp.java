@@ -7,18 +7,18 @@ import edu.upc.dsa.models.ReceivedMessage;
 import java.util.ArrayList;
 import java.util.Date;
 
-public class MessageManagerImp implements MessageManager{
+public class ChatManagerImp implements ChatManager {
 
     MessageDAO msgDB;
-    private static MessageManagerImp instance;
+    private static ChatManagerImp instance;
 
-    private MessageManagerImp() {
+    private ChatManagerImp() {
         msgDB = new MessageDAOImp();
     }
 
-    public static MessageManagerImp getInstance() {
+    public static ChatManagerImp getInstance() {
         if (instance==null)
-            instance = new MessageManagerImp();
+            instance = new ChatManagerImp();
         return instance;
     }
 

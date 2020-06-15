@@ -5,7 +5,7 @@ import edu.upc.dsa.models.ReceivedMessage;
 
 import java.util.ArrayList;
 
-public interface MessageManager {
+public interface ChatManager {
 
     void addMessage(ReceivedMessage msg);
     ArrayList<Message> getAllMessages();

@@ -66,7 +66,30 @@ CREATE TABLE Message (
 						id VARCHAR(255),
 						username VARCHAR(255),
 						receivedDate DATE,
-						content VARCHAR(255)
+						content VARCHAR(255),
+                        PRIMARY KEY (id)
+);
+
+CREATE TABLE ForumThread (
+                        id VARCHAR(255),
+                        author VARCHAR(255),
+                        authorId VARCHAR(255),
+                        name VARCHAR(255),
+                        created DATE,
+                        PRIMARY KEY (id),
+                        FOREIGN KEY (authorId) REFERENCES User(id)
+);
+
+CREATE TABLE ForumMessage (
+                         id VARCHAR(255),
+                        author VARCHAR(255),
+                        authorId VARCHAR(255),
+                        content VARCHAR(255),
+                        posted DATE,
+                        threadId VARCHAR(255),
+                        PRIMARY KEY (id),
+                        FOREIGN KEY (authorId) REFERENCES User(id),
+                        FOREIGN KEY (threadId) REFERENCES ForumThread(id)
 );
 
 INSERT INTO User VALUES ('admin', 'admin', MD5('admin'), 'admin@admin.com', 0, 100, 'TRUE');
