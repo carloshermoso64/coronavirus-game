@@ -5,6 +5,7 @@ import edu.upc.dsa.models.Message;
 import edu.upc.dsa.models.ReceivedMessage;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
 
 public class ChatManagerImp implements ChatManager {
@@ -31,7 +32,10 @@ public class ChatManagerImp implements ChatManager {
 
     @Override
     public ArrayList<Message> getAllMessages() {
-        return msgDB.getAllMessages();
+
+        ArrayList<Message> messages = msgDB.getAllMessages();
+        Collections.sort(messages);
+        return messages;
     }
 }
 

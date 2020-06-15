@@ -66,7 +66,7 @@ public class ForumService {
 
     @POST
     @Path("/{threadid}")
-    @ApiOperation(value = "create new thread", notes = "")
+    @ApiOperation(value = "post new message in thread", notes = "")
     @ApiResponses(value = {
             @ApiResponse(code = 201, message = "Successful"),
             @ApiResponse(code = 500, message = "Validation Error")
@@ -90,7 +90,7 @@ public class ForumService {
 
     @GET
     @Path("/{threadid}")
-    @ApiOperation(value = "get all threads", notes = "")
+    @ApiOperation(value = "get all messages of thread", notes = "")
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "Successful", response = ForumThread.class, responseContainer="List"),
             @ApiResponse(code = 500, message = "Validation Error")

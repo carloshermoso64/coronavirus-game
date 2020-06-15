@@ -55,7 +55,7 @@ CREATE TABLE BestLevel (
 						levelNumber INT,
 						bestScore INT,
 						bestTime INT,
-						startDate DATE,
+						startDate TIMESTAMP,
 						idUser VARCHAR(255),
 						PRIMARY KEY (id),
 						FOREIGN KEY (levelNumber) REFERENCES Level(levelNumber),
@@ -65,7 +65,7 @@ CREATE TABLE BestLevel (
 CREATE TABLE Message (
 						id VARCHAR(255),
 						username VARCHAR(255),
-						receivedDate DATE,
+						receivedDate TIMESTAMP,
 						content VARCHAR(255),
                         PRIMARY KEY (id)
 );
@@ -75,7 +75,8 @@ CREATE TABLE ForumThread (
                         author VARCHAR(255),
                         authorId VARCHAR(255),
                         name VARCHAR(255),
-                        created DATE,
+                        created TIMESTAMP,
+						lastMessage TIMESTAMP,
                         PRIMARY KEY (id),
                         FOREIGN KEY (authorId) REFERENCES User(id)
 );
@@ -85,7 +86,7 @@ CREATE TABLE ForumMessage (
                         author VARCHAR(255),
                         authorId VARCHAR(255),
                         content VARCHAR(255),
-                        posted DATE,
+                        posted TIMESTAMP,
                         threadId VARCHAR(255),
                         PRIMARY KEY (id),
                         FOREIGN KEY (authorId) REFERENCES User(id),

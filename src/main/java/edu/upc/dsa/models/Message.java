@@ -4,7 +4,7 @@ import org.apache.commons.lang3.RandomStringUtils;
 
 import java.util.Date;
 
-public class Message {
+public class Message implements Comparable<Message>{
     private String id;
     private String username;
     private String content;
@@ -51,5 +51,10 @@ public class Message {
 
     public void setReceivedDate(Date receivedDate) {
         this.receivedDate = receivedDate;
+    }
+
+    @Override
+    public int compareTo(Message o) {
+        return receivedDate.compareTo(o.receivedDate);
     }
 }

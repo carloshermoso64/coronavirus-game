@@ -22,7 +22,7 @@ public class ChatService {
     public ChatManager msgManager = ChatManagerImp.getInstance();
 
     @POST
-    @ApiOperation(value = "Send message", notes = "Adds a message")
+    @ApiOperation(value = "Send message", notes = "")
     @ApiResponses(value = {
             @ApiResponse(code = 201, message = "Successful", response= UserTO.class),
             @ApiResponse(code = 500, message = "Validation Error")
