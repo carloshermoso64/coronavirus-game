@@ -63,4 +63,21 @@ public class ForumThreadDAOImp implements ForumThreadDAO{
         }
         return threads;
     }
+
+    public void updateThread(ForumThread thread) {
+        Session session = null;
+
+        try {
+            session = FactorySession.openSession();
+            session.update(thread,thread.getId());
+        }
+
+        catch (Exception e) {
+
+        }
+
+        finally {
+            session.close();
+        }
+    }
 }

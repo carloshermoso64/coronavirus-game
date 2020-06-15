@@ -7,6 +7,7 @@ import edu.upc.dsa.models.User;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Date;
 import java.util.List;
 
 public class ForumManagerImp implements ForumManager{
@@ -55,6 +56,9 @@ public class ForumManagerImp implements ForumManager{
         User user = userDB.getUser("name", author);
         ForumMessage forumMessage = new ForumMessage(user.getName(), user.getId(), content, threadId);
         messageDB.postMessage(forumMessage);
+        ForumThread thread = forumThreadDB.getForumThread(threadId);
+        thread.setLastMessage(new Date());
+        forumThreadDB.updateThread(thread);
     }
 
 }

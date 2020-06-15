@@ -9,4 +9,5 @@ public interface ForumThreadDAO {
     void addThread(ForumThread thread);
     ForumThread getForumThread(String id);
     List<ForumThread> listAllThreads();
+    void updateThread(ForumThread thread);
 }
