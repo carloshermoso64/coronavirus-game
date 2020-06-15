@@ -15,6 +15,7 @@ public class ForumMessage implements Comparable<ForumMessage> {
     public ForumMessage() {
     }
 
+
     public ForumMessage(String author, String authorId, String content, String threadId) {
         this.author = author;
         this.authorId = authorId;
