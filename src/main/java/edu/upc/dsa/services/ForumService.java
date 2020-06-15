@@ -36,10 +36,11 @@ public class ForumService {
 
     @Consumes(MediaType.MULTIPART_FORM_DATA)
     public Response createThread(@FormDataParam("author") String author,
-                                 @FormDataParam("name") String name) {
+                                 @FormDataParam("name") String name,
+                                @FormDataParam("content") String content) {
 
         try {
-            forumManager.createThread(author,name);
+            forumManager.createThread(author,name,content);
             return Response.status(201).build();
         }
 

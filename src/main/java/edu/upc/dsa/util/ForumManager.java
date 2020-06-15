@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface ForumManager {
 
-    void createThread(String author, String name);
+    void createThread(String author, String name, String firstMessage);
     List<ForumThread> getAllThreads();
     List<ForumMessage> getThreadContent(String forumThreadId);
     void addMessageToThread(String author, String content, String threadId);

@@ -30,10 +30,11 @@ public class ForumManagerImp implements ForumManager{
     }
 
     @Override
-    public void createThread(String author, String name) {
+    public void createThread(String author, String name, String firstMessage) {
         User user = userDB.getUser("name", author);
         ForumThread thread = new ForumThread(user.getName(),user.getId(), name);
         forumThreadDB.addThread(thread);
+        this.addMessageToThread(author, firstMessage, thread.getId());
     }
 
     @Override
