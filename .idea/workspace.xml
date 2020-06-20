@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d7f07586-0424-457a-9802-d52da91bce62" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/services/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/swagger/swagger-ui-bundle.js.map" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,8 +41,8 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/edu/upc/dsa/lib" />
-    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
@@ -193,10 +192,11 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="275" y="22" key="#Menus_and_Toolbars/0.0.1366.728@0.0.1366.728" timestamp="1584706504311" />
-    <state x="275" y="22" key="#Project_Structure" timestamp="1584706712981">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="290" y="47" key="#Project_Structure" timestamp="1592678904432">
+      <screen x="0" y="23" width="1440" height="800" />
     </state>
     <state x="275" y="22" key="#Project_Structure/0.0.1366.728@0.0.1366.728" timestamp="1584706712981" />
+    <state x="290" y="47" key="#Project_Structure/0.23.1440.800@0.23.1440.800" timestamp="1592678904432" />
     <state x="280" y="31" key="#UserDAOTest" timestamp="1589133371955">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -320,10 +320,11 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="213" y="19" key="Maven.ArtifactSearchDialog/0.0.1366.728@0.0.1366.728" timestamp="1589072438772" />
-    <state x="184" y="0" key="SettingsEditor" timestamp="1584723402431">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="194" y="23" key="SettingsEditor" timestamp="1592678938310">
+      <screen x="0" y="23" width="1440" height="800" />
     </state>
     <state x="184" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1584723402431" />
+    <state x="194" y="23" key="SettingsEditor/0.23.1440.800@0.23.1440.800" timestamp="1592678938310" />
     <state x="379" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1585251800161">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
