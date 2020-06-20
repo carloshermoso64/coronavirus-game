@@ -189,7 +189,16 @@ public class UserService {
             String[] parts = fileName.split("\\.");
                 String newFilename = id + ".png";
                 java.nio.file.Path path = FileSystems.getDefault().getPath(System.getProperty("user.dir") + "/images/" + newFilename);
-                Files.copy(file, path);
+                File f = new File(String.valueOf(path));
+                boolean exists = f.exists();
+
+                if (exists) {
+                    f.delete();
+                    Files.copy(file, path);
+                }
+                else {
+                    Files.copy(file, path);
+                }
         }
         catch (Exception e) {
             int c = 1;
