@@ -64,6 +64,22 @@ public class GameManagerImp implements GameManager{
             game.setMask("FALSE");
         }
 
+        int expToNextLevel = (int) ((Math.pow(user.getLevel(),2))*100);
+
+        int currentExp = user.getExp() + lvl.getScore();
+
+        boolean levelUp = currentExp > expToNextLevel;
+
+        while (levelUp) {
+            user.setLevel(user.getLevel()+1);
+            currentExp -= expToNextLevel;
+            expToNextLevel = (int) ((Math.pow(user.getLevel(),2))*100);
+            levelUp = currentExp >= expToNextLevel;
+        }
+        user.setExp(currentExp);
+
+        userDB.updateUser(user);
+
         if (game.getCompletedLevels() < lvl.getLevelNumber())
             game.setCompletedLevels(lvl.getLevelNumber());
         game.setCash(game.getCash() + lvl.getScore());
