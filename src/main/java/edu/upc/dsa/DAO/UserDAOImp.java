@@ -48,16 +48,11 @@ public class UserDAOImp  implements UserDAO{
     }
 
     @Override
-    public User updateUser(String newName, String newEmail, String newPassword, String id) {
+    public User updateUser(User newUser) {
         Session session = null;
-        User user = new User();
         try {
             session = FactorySession.openSession();
-            user = (User)session.get(User.class, "ID" , id);
-            User newUser = new User(newName, newEmail, newPassword );
-            newUser.setId(id);
-            newUser.setExp(user.getExp());
-            session.update(newUser,id);
+            session.update(newUser,newUser.getId());
         }
         catch (Exception e) {
             return null;
@@ -65,7 +60,7 @@ public class UserDAOImp  implements UserDAO{
         finally {
             session.close();
         }
-        return this.getUser("ID", id);
+        return this.getUser("ID", newUser.getId());
     }
 
     @Override
@@ -141,5 +136,29 @@ public class UserDAOImp  implements UserDAO{
             session.close();
         }
         return users;
+    }
+
+    public boolean checkPassword(String name, String password) {
+        Session session = null;
+        HashMap<String, String > params = new HashMap<String, String>();
+        params.put("name", name);
+        params.put("password",password);
+        Integer i = 0;
+        try {
+            session = FactorySession.openSession();
+            i = session.count(User.class, params);
+        }
+
+        catch (Exception e) {
+
+        }
+
+        finally {
+            session.close();
+        }
+        if (i == 1)
+            return true;
+        else
+            return false;
     }
 }

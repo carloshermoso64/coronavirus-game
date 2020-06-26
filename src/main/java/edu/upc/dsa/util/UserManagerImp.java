@@ -60,7 +60,16 @@ public class UserManagerImp implements UserManager {
 
     @Override
     public User updateUser(String newName, String newPassword, String newEmail, String oldID) {
-        userDB.updateUser(newName, newEmail, newPassword, oldID);
+        User oldUser = userDB.getUser("id", oldID);
+        User newUser = new User();
+        newUser.setId(oldID);
+        newUser.setName(newName);
+        newUser.setPassword(newPassword);
+        newUser.setEmail(newEmail);
+        newUser.setExp(oldUser.getExp());
+        newUser.setAdminRights(oldUser.getAdminRights());
+        newUser.setLevel(oldUser.getLevel());
+        userDB.updateUser(newUser);
         return userDB.getUser("ID", oldID);
     }
 
@@ -71,7 +80,10 @@ public class UserManagerImp implements UserManager {
         Token t = (tokenDB.getToken(userToCheck));
 
         if (t != null) {
-            return t.getId();
+            if (userDB.checkPassword(user.getName(), user.getPassword()))
+                return t.getId();
+            else
+                return "FALSE";
         }
         else {
             return userDB.checkLogin(user.getName(), user.getPassword());
