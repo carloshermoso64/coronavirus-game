@@ -96,6 +96,24 @@ public class GameService {
         }
     }
 
+    @POST
+    @ApiOperation(value = "get the game of a user", notes = "get level ")
+    @ApiResponses(value = {
+            @ApiResponse(code = 201, message = "Successful"),
+            @ApiResponse(code = 500, message = "Error")
+    })
+    @Path("/createlevel")
+    public Response postLevel(LevelTO newLevel) {
+        try {
+            gameManager.addLevel(newLevel.getMap());
+            return Response.status(201).build();
+        }
+
+        catch (Exception e) {
+            return Response.status(500).build();
+        }
+    }
+
 }
 
 

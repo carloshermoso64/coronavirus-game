@@ -112,4 +112,14 @@ public class GameManagerImp implements GameManager{
         }
         return lvlsTO;
     }
+
+    public void addLevel(String levelString) {
+        List<Level> levels = levelDB.listAllLevels();
+
+        int levelNumber = levels.size() + 1;
+
+        Level lvl = new Level(levelString, levelNumber);
+
+        levelDB.addLevel(lvl);
+    }
 }

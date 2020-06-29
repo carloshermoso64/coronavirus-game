@@ -14,4 +14,5 @@ public interface GameManager {
     List<LevelTO> getAllLevels();
     Game getGame(String idUser);
     Game levelCompleted(CompletedLevel lvl);
+    void addLevel(String levelString);
 }

@@ -45,7 +45,7 @@ CREATE TABLE Game (
 
 CREATE TABLE Level (
 						id VARCHAR(255),
-						map VARCHAR(255),
+						map VARCHAR(8000),
 						levelNumber INT,
 						PRIMARY KEY (levelNumber)
 );
