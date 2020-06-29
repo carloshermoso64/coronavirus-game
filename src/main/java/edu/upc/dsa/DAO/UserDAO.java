@@ -8,7 +8,7 @@ public interface UserDAO {
 
     public String addUser(String name, String email, String password);
     public User getUser(String searchField, String value);
-    public User updateUser(String newName, String newEmail, String newPassword, String id);
+    public User updateUser(User newUser);
     public String checkLogin(String name, String password);
     public User getUserByName(String name);
     public boolean deleteUser(User user);
