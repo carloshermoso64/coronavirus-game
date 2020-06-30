@@ -1,0 +1,112 @@
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by com.google.inject.internal.cglib.core.$ReflectUtils$1 (file:/usr/share/maven/lib/guice.jar) to method java.lang.ClassLoader.defineClass(java.lang.String,byte[],int,int,java.security.ProtectionDomain)
+WARNING: Please consider reporting this to the maintainers of com.google.inject.internal.cglib.core.$ReflectUtils$1
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+[[1;34mINFO[m] Scanning for projects...
+[[1;33mWARNING[m] 
+[[1;33mWARNING[m] Some problems were encountered while building the effective model for edu.upc.dsa:Minim_1:jar:1.0-SNAPSHOT
+[[1;33mWARNING[m] 'dependencies.dependency.systemPath' for DAOProyecto-1.0-SNAPSHOT:DAOProyecto-1.0-SNAPSHOT:jar should not point at files within the project directory, ${basedir}/src/main/java/edu/upc/dsa/lib/DAOProyecto-1.0-SNAPSHOT.jar will be unresolvable by dependent projects @ line 87, column 25
+[[1;33mWARNING[m] 
+[[1;33mWARNING[m] It is highly recommended to fix these problems because they threaten the stability of your build.
+[[1;33mWARNING[m] 
+[[1;33mWARNING[m] For this reason, future Maven versions might no longer support building such malformed projects.
+[[1;33mWARNING[m] 
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m------------------------< [0;36medu.upc.dsa:Minim_1[0;1m >-------------------------[m
+[[1;34mINFO[m] [1mBuilding Minim_1 1.0-SNAPSHOT[m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m>>> [0;32mexec-maven-plugin:1.2.1:java[m [1m(default-cli)[0;1m > [0;1mvalidate[m @ [36mMinim_1[0;1m >>>[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m<<< [0;32mexec-maven-plugin:1.2.1:java[m [1m(default-cli)[0;1m < [0;1mvalidate[m @ [36mMinim_1[0;1m <<<[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mexec-maven-plugin:1.2.1:java[m [1m(default-cli)[m @ [36mMinim_1[0;1m ---[m
+log4j:ERROR Could not find value for key log4j.appender.file
+log4j:ERROR Could not instantiate appender named "file".
+2020-06-29 23:47:20 INFO  Reflections:229 - Reflections took 203 ms to scan 1 urls, producing 96 keys and 117 values 
+jun. 29, 2020 11:47:25 P. M. org.glassfish.grizzly.http.server.NetworkListener start
+INFORMACIÓN: Started listener bound to [147.83.7.204:8080]
+jun. 29, 2020 11:47:25 P. M. org.glassfish.grizzly.http.server.HttpServer start
+INFORMACIÓN: [HttpServer] Started.
+Working Directory = /home/dsa0/grupo2/coronavirus-game
+Jersey app started with WADL available at http://147.83.7.204:8080/dsaApp/application.wadl
+Hit enter to stop it...
+[[1;33mWARNING[m] 
+[1;31mjava.lang.reflect.InvocationTargetException[m
+    [1mat[m jdk.internal.reflect.NativeMethodAccessorImpl.invoke0 ([1mNative Method[m)
+    [1mat[m jdk.internal.reflect.NativeMethodAccessorImpl.invoke ([1mNativeMethodAccessorImpl.java:62[m)
+    [1mat[m jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke ([1mDelegatingMethodAccessorImpl.java:43[m)
+    [1mat[m java.lang.reflect.Method.invoke ([1mMethod.java:564[m)
+    [1mat[m org.codehaus.mojo.exec.ExecJavaMojo$1.run ([1mExecJavaMojo.java:297[m)
+    [1mat[m java.lang.Thread.run ([1mThread.java:844[m)
+[1mCaused by[m: java.io.IOException: [1;31mDescriptor de archivo erróneo[m
+    [1mat[m java.io.FileInputStream.readBytes ([1mNative Method[m)
+    [1mat[m java.io.FileInputStream.read ([1mFileInputStream.java:280[m)
+    [1mat[m java.io.BufferedInputStream.fill ([1mBufferedInputStream.java:252[m)
+    [1mat[m java.io.BufferedInputStream.read ([1mBufferedInputStream.java:271[m)
+    [1mat[m edu.upc.dsa.Main.main ([1mMain.java:69[m)
+    [1mat[m jdk.internal.reflect.NativeMethodAccessorImpl.invoke0 ([1mNative Method[m)
+    [1mat[m jdk.internal.reflect.NativeMethodAccessorImpl.invoke ([1mNativeMethodAccessorImpl.java:62[m)
+    [1mat[m jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke ([1mDelegatingMethodAccessorImpl.java:43[m)
+    [1mat[m java.lang.reflect.Method.invoke ([1mMethod.java:564[m)
+    [1mat[m org.codehaus.mojo.exec.ExecJavaMojo$1.run ([1mExecJavaMojo.java:297[m)
+    [1mat[m java.lang.Thread.run ([1mThread.java:844[m)
+2020-06-30 00:23:52 INFO  Reflections:229 - Reflections took 72 ms to scan 1 urls, producing 96 keys and 117 values 
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by com.google.inject.internal.cglib.core.$ReflectUtils$1 (file:/usr/share/maven/lib/guice.jar) to method java.lang.ClassLoader.defineClass(java.lang.String,byte[],int,int,java.security.ProtectionDomain)
+WARNING: Please consider reporting this to the maintainers of com.google.inject.internal.cglib.core.$ReflectUtils$1
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+[[1;34mINFO[m] Scanning for projects...
+[[1;33mWARNING[m] 
+[[1;33mWARNING[m] Some problems were encountered while building the effective model for edu.upc.dsa:Minim_1:jar:1.0-SNAPSHOT
+[[1;33mWARNING[m] 'dependencies.dependency.systemPath' for DAOProyecto-1.0-SNAPSHOT:DAOProyecto-1.0-SNAPSHOT:jar should not point at files within the project directory, ${basedir}/src/main/java/edu/upc/dsa/lib/DAOProyecto-1.0-SNAPSHOT.jar will be unresolvable by dependent projects @ line 87, column 25
+[[1;33mWARNING[m] 
+[[1;33mWARNING[m] It is highly recommended to fix these problems because they threaten the stability of your build.
+[[1;33mWARNING[m] 
+[[1;33mWARNING[m] For this reason, future Maven versions might no longer support building such malformed projects.
+[[1;33mWARNING[m] 
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m------------------------< [0;36medu.upc.dsa:Minim_1[0;1m >-------------------------[m
+[[1;34mINFO[m] [1mBuilding Minim_1 1.0-SNAPSHOT[m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m>>> [0;32mexec-maven-plugin:1.2.1:java[m [1m(default-cli)[0;1m > [0;1mvalidate[m @ [36mMinim_1[0;1m >>>[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m<<< [0;32mexec-maven-plugin:1.2.1:java[m [1m(default-cli)[0;1m < [0;1mvalidate[m @ [36mMinim_1[0;1m <<<[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mexec-maven-plugin:1.2.1:java[m [1m(default-cli)[m @ [36mMinim_1[0;1m ---[m
+log4j:ERROR Could not find value for key log4j.appender.file
+log4j:ERROR Could not instantiate appender named "file".
+2020-06-30 02:28:28 INFO  Reflections:229 - Reflections took 200 ms to scan 1 urls, producing 96 keys and 117 values 
+jun. 30, 2020 2:28:32 A. M. org.glassfish.grizzly.http.server.NetworkListener start
+INFORMACIÓN: Started listener bound to [147.83.7.204:8080]
+jun. 30, 2020 2:28:33 A. M. org.glassfish.grizzly.http.server.HttpServer start
+INFORMACIÓN: [HttpServer] Started.
+Working Directory = /home/dsa0/grupo2/coronavirus-game
+Jersey app started with WADL available at http://147.83.7.204:8080/dsaApp/application.wadl
+Hit enter to stop it...
+[[1;33mWARNING[m] 
+[1;31mjava.lang.reflect.InvocationTargetException[m
+    [1mat[m jdk.internal.reflect.NativeMethodAccessorImpl.invoke0 ([1mNative Method[m)
+    [1mat[m jdk.internal.reflect.NativeMethodAccessorImpl.invoke ([1mNativeMethodAccessorImpl.java:62[m)
+    [1mat[m jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke ([1mDelegatingMethodAccessorImpl.java:43[m)
+    [1mat[m java.lang.reflect.Method.invoke ([1mMethod.java:564[m)
+    [1mat[m org.codehaus.mojo.exec.ExecJavaMojo$1.run ([1mExecJavaMojo.java:297[m)
+    [1mat[m java.lang.Thread.run ([1mThread.java:844[m)
+[1mCaused by[m: java.io.IOException: [1;31mDescriptor de archivo erróneo[m
+    [1mat[m java.io.FileInputStream.readBytes ([1mNative Method[m)
+    [1mat[m java.io.FileInputStream.read ([1mFileInputStream.java:280[m)
+    [1mat[m java.io.BufferedInputStream.fill ([1mBufferedInputStream.java:252[m)
+    [1mat[m java.io.BufferedInputStream.read ([1mBufferedInputStream.java:271[m)
+    [1mat[m edu.upc.dsa.Main.main ([1mMain.java:69[m)
+    [1mat[m jdk.internal.reflect.NativeMethodAccessorImpl.invoke0 ([1mNative Method[m)
+    [1mat[m jdk.internal.reflect.NativeMethodAccessorImpl.invoke ([1mNativeMethodAccessorImpl.java:62[m)
+    [1mat[m jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke ([1mDelegatingMethodAccessorImpl.java:43[m)
+    [1mat[m java.lang.reflect.Method.invoke ([1mMethod.java:564[m)
+    [1mat[m org.codehaus.mojo.exec.ExecJavaMojo$1.run ([1mExecJavaMojo.java:297[m)
+    [1mat[m java.lang.Thread.run ([1mThread.java:844[m)
+2020-06-30 02:37:25 INFO  Reflections:229 - Reflections took 103 ms to scan 1 urls, producing 96 keys and 117 values 

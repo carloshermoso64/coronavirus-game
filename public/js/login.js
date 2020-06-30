@@ -69,7 +69,7 @@ $(function(){
 
 	$.ajax({
 		type: "POST",
-		url: "http://localhost:8080/dsaApp/user/login",
+		url: "http://147.83.7.204:8080/dsaApp/user/login",
 		// The key needs to match your method's input parameter (case-sensitive).
 		data: JSON.stringify(Credentials),
 		contentType: "application/json; charset=utf-8",
@@ -92,7 +92,7 @@ $(function(){
 			setCookie('cookieToken',data.responseText,7);
 			setCookie('cookieName',Credentials.name,7);
 			console.log(data.responseText);
-			var reqid = "http://localhost:8080/dsaApp/user/"+Credentials.name;
+			var reqid = "http://147.83.7.204:8080/dsaApp/user/"+Credentials.name;
 			// Se foi completo solicitar o id
 			$.getJSON(reqid, function(data){
 				setCookie('cookieId',data.id,7);

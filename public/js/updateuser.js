@@ -50,10 +50,10 @@ $(function(){
 		e.preventDefault();
 		console.log("ATUALIZANDO");
 		//Vai atualizar os dados aqui
-		//curl -X PUT "http://localhost:8080/dsaApp/user/1t8bTj5D" -H "accept: application/json" -H "Content-Type: application/json" -d "{ \"id\": \"1t8bTj5D\", \"name\": \"user07\", \"email\": \"user01@mail.com\", \"password\": \"asdfghjk\", \"exp\": 0, \"level\": 1, \"adminRights\": \"\"}"
+		//curl -X PUT "http://147.83.7.204:8080/dsaApp/user/1t8bTj5D" -H "accept: application/json" -H "Content-Type: application/json" -d "{ \"id\": \"1t8bTj5D\", \"name\": \"user07\", \"email\": \"user01@mail.com\", \"password\": \"asdfghjk\", \"exp\": 0, \"level\": 1, \"adminRights\": \"\"}"
 	
 		// INICIO EXEMPLO
-		var reqid = 'http://localhost:8080/dsaApp/user/search/'+getCookie('cookieId');
+		var reqid = 'http://147.83.7.204:8080/dsaApp/user/search/'+getCookie('cookieId');
 		// Se foi completo solicitar o id
 
 		var username = document.getElementById("textUser");
@@ -90,7 +90,7 @@ $(function(){
 
 			$.ajax({
 				type: "PUT",
-				url: 'http://localhost:8080/dsaApp/user/'+User.id,
+				url: 'http://147.83.7.204:8080/dsaApp/user/'+User.id,
 				// The key needs to match your method's input parameter (case-sensitive).
 				data: JSON.stringify(User),
 				contentType: "application/json; charset=utf-8",
@@ -113,7 +113,7 @@ $(function(){
 
 					$.ajax({
 					    type: "POST",
-					    url: "http://localhost:8080/dsaApp/user/login",
+					    url: "http://147.83.7.204:8080/dsaApp/user/login",
 					    // The key needs to match your method's input parameter (case-sensitive).
 					    data: JSON.stringify(Credentials),
 					    contentType: "application/json; charset=utf-8",

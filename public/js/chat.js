@@ -24,7 +24,7 @@ $(document).ready(function(){
 
 
 function firstFunction(data){
-	var staticUrl = 'http://localhost:8080/dsaApp/chat';
+	var staticUrl = 'http://147.83.7.204:8080/dsaApp/chat';
 	nomeCookie = getCookie('cookieName');
 	console.log("PRIMEIRA OK");
 	$.getJSON(staticUrl, function(data){
@@ -58,10 +58,10 @@ function firstFunction(data){
 			// call first function and pass in a callback function which
 			// first function runs when it has completed
 					window.vComent.forEach(function(part, index, theArray){
-						var reqid = 'http://localhost:8080/dsaApp/user/'+theArray[index].suser;
+						var reqid = 'http://147.83.7.204:8080/dsaApp/user/'+theArray[index].suser;
 						// Se foi completo solicitar o id
 							$.getJSON(reqid, function(data){
-								var staticUrl = 'http://localhost:8080/dsaApp/user/image/'+data.id;
+								var staticUrl = 'http://147.83.7.204:8080/dsaApp/user/image/'+data.id;
 								//console.log(staticUrl);
 								$.get(staticUrl)
 								.done(function() { 
@@ -154,10 +154,10 @@ $(function(){
 	
 	console.log(ReceivedMessage);
 	
-	//curl -X POST "http://localhost:8080/dsaApp/chat" -H "accept: application/json" -H "Content-Type: application/json" -d "{ \"username\": \"juninho\", \"content\": \"Mensagem 2...\"}"
+	//curl -X POST "http://147.83.7.204:8080/dsaApp/chat" -H "accept: application/json" -H "Content-Type: application/json" -d "{ \"username\": \"juninho\", \"content\": \"Mensagem 2...\"}"
 	$.ajax({
 		type: "POST",
-		url: "http://localhost:8080/dsaApp/chat",
+		url: "http://147.83.7.204:8080/dsaApp/chat",
 		// The key needs to match your method's input parameter (case-sensitive).
 		data: JSON.stringify(ReceivedMessage),
 		contentType: "application/json; charset=utf-8",

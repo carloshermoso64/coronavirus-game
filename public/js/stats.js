@@ -10,7 +10,7 @@ $(document).ready(function(){
         // Mostra texto fazer login para interagir
     }
 
-    var staticUrl = 'http://localhost:8080/dsaApp/stats/userranking';
+    var staticUrl = 'http://147.83.7.204:8080/dsaApp/stats/userranking';
     var teste = false;
     var nameConfere = "Calculadora";
     var vetNivel = new Array();
