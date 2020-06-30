@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d7f07586-0424-457a-9802-d52da91bce62" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/models/CompletedLevel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/models/CompletedLevel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/util/GameManagerImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/upc/dsa/util/GameManagerImp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -207,9 +207,10 @@
     </state>
     <state x="488" y="48" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1589072339665" />
     <state x="600" y="69" key="#com.intellij.ide.util.MemberChooser/0.0.1680.1050@0.0.1680.1050" timestamp="1593476119566" />
-    <state x="689" y="421" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1590513481315">
-      <screen x="0" y="0" width="1680" height="1050" />
+    <state x="560" y="292" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1593481401543">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state x="560" y="292" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1366.728@0.0.1366.728" timestamp="1593481401543" />
     <state x="689" y="421" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1590513481315" />
     <state x="289" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1592215554110">
       <screen x="0" y="0" width="1680" height="1050" />
@@ -345,48 +346,43 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/edu/upc/dsa/DAO/TokenDAOImp.java</url>
-          <line>40</line>
+          <line>41</line>
           <option name="timeStamp" value="106" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/edu/upc/dsa/DAO/TokenDAOImp.java</url>
-          <line>41</line>
+          <line>42</line>
           <option name="timeStamp" value="107" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/edu/upc/dsa/DAO/TokenDAOImp.java</url>
-          <line>44</line>
+          <line>45</line>
           <option name="timeStamp" value="108" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/edu/upc/dsa/DAO/TokenDAOImp.java</url>
-          <line>43</line>
+          <line>44</line>
           <option name="timeStamp" value="109" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/edu/upc/dsa/DAO/TokenDAOImp.java</url>
-          <line>45</line>
+          <line>46</line>
           <option name="timeStamp" value="110" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/edu/upc/dsa/DAO/TokenDAOImp.java</url>
-          <line>46</line>
+          <line>47</line>
           <option name="timeStamp" value="111" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/edu/upc/dsa/DAO/TokenDAOImp.java</url>
-          <line>48</line>
+          <line>49</line>
           <option name="timeStamp" value="112" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/edu/upc/dsa/DAO/TokenDAOImp.java</url>
-          <line>50</line>
+          <line>51</line>
           <option name="timeStamp" value="113" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/edu/upc/dsa/DAO/TokenDAOImp.java</url>
-          <line>95</line>
-          <option name="timeStamp" value="119" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/edu/upc/dsa/util/UserManagerImp.java</url>
