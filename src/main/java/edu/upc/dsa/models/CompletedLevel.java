@@ -4,6 +4,7 @@ import java.sql.Date;
 
 public class CompletedLevel {
 
+    private boolean completed;
     private int levelNumber;
     private int score;
     private int time;
@@ -12,6 +13,14 @@ public class CompletedLevel {
     private boolean keepsMask;
 
     public CompletedLevel() {
+    }
+
+    public boolean getCompleted() {
+        return completed;
+    }
+
+    public void setCompleted(boolean completed) {
+        this.completed = completed;
     }
 
     public int getLevelNumber() {
